@@ -1,7 +1,10 @@
 const path = require('path')
 const app = require('koa')()
 const sass = require('../index')
-app.use(sass(path.resolve('examples/sass'), {
+app.use(sass({
+  path: path.resolve('examples/sass')
+  // outPath: path.resolve('examples/css')
+}, {
   includePaths: ['examples/sass']
 }))
 
